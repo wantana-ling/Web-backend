@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ling2545
+      POSTGRES_DB: microfinance
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=microfinance
+      - DB_USER=postgres
+      - DB_PASSWORD=ling2545

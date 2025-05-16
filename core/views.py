@@ -4,6 +4,10 @@ from .models import User
 from .models import CoreDetail
 from .models import Donation
 import json
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to the Home Page!")
 
 @csrf_exempt
 def register_api(request):

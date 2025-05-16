@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'microfinance',
-        'USER': 'postgres',
-        'PASSWORD': 'ling2545',
-        'HOST': 'localhost',
+        'NAME': os.getenv('DB_NAME', 'microfinance'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'ling2545'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': '5432',
     }
 }
@@ -125,6 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
