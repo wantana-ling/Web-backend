@@ -327,6 +327,7 @@ def get_all_donations(request):
                 "amount": float(d.amount),
                 "timestamp": d.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
                 "note": d.note,
+                "user_id": d.user.id,
             })
         return JsonResponse({"donations": data}, status=200)
     except Exception as e:
