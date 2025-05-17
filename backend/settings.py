@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'microfinance_db',   
         'USER': 'admin',            
         'PASSWORD': 'GC2pmkd7lmRDjLw5nRHiTgcWPcZhPLbH',  
-        'HOST': 'dpg-d0jueu3uibrs73923g80-a',  
+        'HOST': 'dpg-d0jueu3uibrs73923g80-a.region-postgres.render.com',  
         'PORT': '5432',
     }
 }
